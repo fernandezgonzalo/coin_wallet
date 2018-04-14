@@ -1,0 +1,1 @@
+http post localhost:8000/api/v1/transactions/ address_from=/api/v1/gualets/3/ address_to=/api/v1/gualets/5/ amount:=1

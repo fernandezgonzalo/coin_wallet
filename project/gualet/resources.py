@@ -11,7 +11,7 @@ from gualet.models import Transaction
 class UserResource(ModelResource):
     class Meta:
         queryset = User.objects.all()
-        resource_name = 'user'
+        resource_name = 'users'
         filtering = {
             'username': ALL,
         }
@@ -30,20 +30,25 @@ class UserResource(ModelResource):
 
 class GualetResource(ModelResource):
     user = fields.ForeignKey(UserResource, 'user', full=True)
+
     class Meta:
         queryset = Gualet.objects.all()
-        resource_name = 'gualet'
+        resource_name = 'gualets'
         filtering = {
             'user': ALL_WITH_RELATIONS,
         }
         authorization = Authorization()
 
 
-
 class TransactionResource(ModelResource):
     address_from = fields.ForeignKey(GualetResource, 'address_from', full=True)
     address_to = fields.ForeignKey(GualetResource, 'address_to', full=True)
+
     class Meta:
         queryset = Transaction.objects.all()
-        resource_name = 'transaction'
+        resource_name = 'transactions'
         authorization = Authorization()
+        filtering = {
+            'address_from': ALL_WITH_RELATIONS,
+            'address_to': ALL_WITH_RELATIONS,
+        }
