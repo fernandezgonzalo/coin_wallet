@@ -502,3 +502,4 @@ helpers/
 * User permissions on Transaction and Gualet.
 * Dockerizing server.
 * User authentication by BasicAuth, Apikey, OAuth, etc.
+* Documentation api on Swagger and sphinix
