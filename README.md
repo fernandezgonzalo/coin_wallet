@@ -1,5 +1,5 @@
 # coin_wallet
-Coin Wallet
+Coin Wallet Project
 
 
 ## Docker Postgresql
