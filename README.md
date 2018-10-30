@@ -64,6 +64,7 @@ X-Frame-Options: SAMEORIGIN
 
 ```
 
+
 ### User schema
 
 http GET http://localhost:8000/api/v1/users/schema/
